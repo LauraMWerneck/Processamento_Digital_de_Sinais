@@ -1,0 +1,274 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 26 19:42:11 2022
+
+@author: Laura Martin Werneck
+"""
+
+import matplotlib.pyplot as plt
+from fDSP import impseq,stepseq,sigadd,sigmult,sigshift,sigfold
+import numpy as np
+
+"""
+
+# Lista de Exercicio 1
+
+
+############ P2.1 ############
+
+
+#Exercicio 1 
+
+[x11,n] = impseq(-2,-5,15) 
+[x12,n] = impseq(0,-5,15)
+[x13,n] = impseq(3,-5,15) 
+[x14,n] = impseq(7,-5,15)
+
+x = 3*x11 + 2*x12- x13 + 5*x14
+
+plt.figure()
+plt.stem(n,x)
+
+
+
+# Exercicio 2  
+
+x  = 0
+
+for i in range(-5, 6):
+    
+    
+    [x1,n] = impseq(2*i,-10,10) 
+    
+    x = x + x1*np.exp(- np.abs(i))
+    
+plt.figure()
+plt.stem(n,x)    
+
+
+
+# Exercicio 3
+
+[x11,n] = stepseq(0,-2,16)    
+[x12,n] = stepseq(5,-2,16)
+[x13,n] = stepseq(10,-2,16)
+[x14,n] = stepseq(15,-2,16)
+
+x = 10*x11 - 5*x12 - 10*x13 + 5*x14
+
+plt.figure()
+plt.stem(n,x)
+
+
+
+# Exercicio 4
+
+[x11,n] = stepseq(-20,-22,11)    
+[x12,n] = stepseq(10,-22,11)
+
+x = np.exp(0.1*n)*(x11 - x12)
+
+plt.figure()
+plt.stem(n,x)
+
+
+
+# Exericio 5
+
+n = np.array(range(-200, 201))
+
+x1 = np.cos(0.49*np.pi*n)
+x2 = np.cos(0.51*np.pi*n)
+
+x = 5*(x1 + x2)
+
+plt.figure()
+plt.stem(n,x)
+
+
+
+# Exercicio 6
+
+n = np.array(range(-200, 201))
+
+x1 = np.sin(0.01*np.pi*n)
+x2 = np.cos(0.5*np.pi*n)
+
+x = 2*x1*x2
+
+plt.figure()
+plt.stem(n,x)
+
+
+
+# Exercicio 7
+
+n = np.array(range(100))
+
+x1 = np.sin(0.01*np.pi*n + np.pi/3)
+
+x = np.exp(-0.05*n)*x1
+
+plt.figure()
+plt.stem(n,x)
+
+
+
+# Exercicio 8 
+
+n = np.array(range(100))
+
+x1 = np.sin(0.01*np.pi*n)
+
+x = np.exp(0.01*n)*x1
+
+plt.figure()
+plt.stem(n,x)
+"""
+
+############## P2.3 ##################
+
+
+# Exercicio 1 
+
+n = np.arange(-12,13)
+
+x = np.array([-2,-1,0,1,2])
+y = np.tile(x,5)
+
+plt.figure()
+plt.stem(n,y)
+
+
+plt.show()
+
+
+# Exercicio 2
+
+[x11,n] = stepseq(0,0,20)    
+[x12,n] = stepseq(20,0,20)
+
+x = np.exp(0.1*n)*(x11 - x12)
+
+n = np.array(range(0, 63))
+
+y = np.tile(x,3)
+
+plt.figure()
+plt.stem(n,y)
+
+plt.show()
+
+
+
+
+# Exercicio 3
+
+"""
+[x11,n] = stepseq(0,0,10)    
+[x12,n] = stepseq(10,0,10)
+
+x1 = x11 - x12
+
+plt.figure()
+plt.stem(n,x)
+
+
+n = np.array(range(0, 10))
+
+x2 = np.sin(0.01*np.pi*n)
+
+
+x = x1*x2
+
+
+#plt.figure()
+#plt.stem(n,x)
+
+n = np.array(range(0, 40))
+
+y = np.tile(x,4)
+
+plt.figure()
+plt.stem(n,y)
+
+plt.show()
+"""
+
+for n in range(9):
+    
+    x = np.sin(0.01*np.pi*n)
+    
+    n = np.array(range(0, 40))
+
+    y = np.tile(x,4)
+
+    plt.figure()
+    plt.stem(n,y)
+
+    plt.show()
+    
+
+
+
+
+
+
+"""
+# Exercicio 4
+
+n = np.arange(0,25)
+
+x1 = np.array([1,2,3])
+x2 = np.array([1,2,3,4])
+
+x = x1 + x2
+
+y = np.tile(x,5)
+
+plt.figure()
+plt.stem(n,y)
+
+
+plt.show()
+
+
+
+
+
+
+
+
+
+"""
+
+############## P2.4 ##################
+
+"""
+n = np.arange(-2,11)
+x = np.array(list(range(1,8))+list(range(6,0,-1)))
+
+
+
+
+
+# Exercicio 1 
+
+[x11,n11] = sigshift(x,n,3)
+[x12,n12] = sigshift(x,n,-4)
+[x1,n1] = sigadd(2*x11,n11,3*x12,n12,x)
+
+plt.figure()
+plt.stem(n1,x1)
+
+# Exercicio 2
+
+
+
+# Exercicio 3
+"""
+
+
+
+# Exercicio 4 
+
