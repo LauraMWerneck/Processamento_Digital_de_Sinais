@@ -19,6 +19,6 @@ y = x*u
 vdiff=sum(abs(diff))
 
 if vdiff < 1e-5:
-    print(' **** Sistema é Invariante no Tempo ***')
+    print(' **** Sistema Ã© Invariante no Tempo ***')
 else:
-    print(' **** Sistema não é Invariante no Tempo ***')
+    print(' **** Sistema nÃ£o Ã© Invariante no Tempo ***')
