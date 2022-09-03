@@ -17,10 +17,10 @@ a=5                     # constante a
 b=10                    # constante b
 y=(a*x1+b*x2)*u
 
-# verificar se é igual a a.y1 + b.y2, descontando erros numéricos
+# verificar se Ã© igual a a.y1 + b.y2, descontando erros numÃ©ricos
 diff = sum (abs(y - (a*y1 + b*y2)))   
 
 if diff < 1e-5:
-    print(' **** Sistema é linear ***')
+    print(' **** Sistema Ã© linear ***')
 else:
-    print(' **** Sistema não é linear ***')
+    print(' **** Sistema nÃ£o Ã© linear ***')
